@@ -1,5 +1,6 @@
-<?php include 'delovi/head.php'; ?>
+<?php include 'head.php'; ?>
 
+<body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <a class="navbar-brand" href="/">
@@ -14,31 +15,31 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0"> 
                 <li class="nav-item">
-                    <a class="nav-link <?= $trenutnaStranica === 'pocetna' ? 'active' : '' ?>" href="/">Pocetna</a>
+                    <a class="nav-link <?= $stranica === 'pocetna' ? 'active' : '' ?>" href="?stranica=pocetna">Pocetna</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= $trenutnaStranica === 'meni' ? 'active' : '' ?>" href="meni.php">Meni</a>
+                    <a class="nav-link <?= $stranica === 'meni' ? 'active' : '' ?>" href="?stranica=meni">Meni</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= $trenutnaStranica === 'cene' ? 'active' : '' ?>" href="cene.php">Cene</a>
+                    <a class="nav-link <?= $stranica === 'cene' ? 'active' : '' ?>" href="?stranica=cene">Cene</a>
                 </li>
 								<li class="nav-item">
-									<a class="nav-link <?= $trenutnaStranica === 'onama' ? 'active' : '' ?>" href="onama.php">O nama</a>
+									<a class="nav-link <?= $stranica === 'onama' ? 'active' : '' ?>" href="?stranica=onama">O nama</a>
 								</li>
 
                 <?php if ($loginovan): ?> 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Profil
+														<?php echo $korisnik["name"]; ?>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Prikaz Profila</a></li>
-                            <li><a class="dropdown-item" href="odjava.php">Odjava</a></li>
+                            <li><a class="dropdown-item" href="?stranica=profil">Prikaz Profila</a></li>
+                            <li><a class="dropdown-item" href="skripte/odjava.php">Odjava</a></li>
                         </ul>
                     </li>
                 <?php else: ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="prijava.php">Prijava</a>
+                        <a class="nav-link" href="?stranica=prijava">Prijava</a>
                     </li>
                 <?php endif; ?>
             </ul>

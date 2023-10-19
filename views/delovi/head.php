@@ -13,5 +13,4 @@
 
     <title>Eko Zdrava Hrana</title>
 </head>
-<body>
 

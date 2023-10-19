@@ -29,7 +29,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary mb-3">Registruj se</button>
             </form>
-						<a href="prijava.php">Vec imas nalog? Prijavi se</a>
+						<a href="?stranica=prijava">Vec imas nalog? Prijavi se</a>
         </div>
     </div>
 </div>
