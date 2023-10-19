@@ -15,6 +15,16 @@
     }
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 @keyframes fadeInRight {
     from {
         opacity: 0;
@@ -31,10 +41,27 @@
     animation-name: fadeInUp;
 }
 
+.fadeIn {
+    animation-name: fadeIn;
+}
+
 .fadeInRight {
     animation-name: fadeInRight;
 }
 
 .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
     display: block;
+}
+
+/* O nama */
+.container h1 {
+    color: #28a745; 
+}
+
+.container img {
+    border-radius: 10px; 
+}
+
+.container p {
+    text-align: justify; 
 }

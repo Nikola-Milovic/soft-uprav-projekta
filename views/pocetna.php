@@ -1,9 +1,8 @@
 <?php
-$trenutnaStranica = 'pocetna';
 include 'delovi/heder.php';  
 ?>
 
-<div class="container my-5">
+<div class="container my-5 animated fadeIn">
     <div class="row align-items-center">
         <div class="col-md-6">
             <h1 class="display-4">Dostava Eko Hrane</h1> 

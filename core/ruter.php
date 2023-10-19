@@ -26,6 +26,16 @@ class Ruter {
 								require 'kontroleri/pocetniKontroler.php';
 								$kontroler = new PocetniKontroler($this->pdo);
                 break;
+
+            case 'onama':
+								require 'kontroleri/onamaKontroler.php';
+								$kontroler = new OnamaKontroler($this->pdo);
+                break;
+
+            case 'meni':
+								require 'kontroleri/meniKontroler.php';
+								$kontroler = new MeniKontroler($this->pdo);
+                break;
         }
 
         $kontroler->index();
