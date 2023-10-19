@@ -8,10 +8,6 @@ class PocetniKontroler {
     }
 
     public function index() {
-        session_start();
-
-        $loginovan = isset($_SESSION['loginovan']) && $_SESSION['loginovan'] == true;
-
         require 'views/pocetna.php';
     }
 }
