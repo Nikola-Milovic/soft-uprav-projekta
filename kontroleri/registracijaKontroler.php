@@ -34,8 +34,14 @@ class RegistracijaKontroler {
 
                 $stmt = $this->pdo->prepare('INSERT INTO users_pr1 (username, name, password) VALUES (?, ?, ?)');
                 $stmt->execute([$korisnickoIme, $ime, $hashovanaSifra]);
-                header('Location: prijava.php');
-                exit;
+
+                $stmt = $this->pdo->prepare('SELECT * FROM users_pr1 WHERE username = ?');
+                $stmt->execute([$korisnickoIme]);
+                $korisnik = $stmt->fetch();
+								$_SESSION['loginovan'] = true;
+								$_SESSION['korisnik'] = $korisnik;
+								header('Location: ?stranica=pocetna');
+								exit;
             }
         }
 

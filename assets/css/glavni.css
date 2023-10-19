@@ -34,3 +34,7 @@
 .fadeInRight {
     animation-name: fadeInRight;
 }
+
+.navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}

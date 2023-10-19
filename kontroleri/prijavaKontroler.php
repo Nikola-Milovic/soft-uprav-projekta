@@ -1,5 +1,5 @@
 <?php
-class LoginKontroler {
+class PrijavaKontroler {
 
     private $pdo;
 
@@ -34,7 +34,7 @@ class LoginKontroler {
                 if($korisnik && password_verify($sifra, $korisnik['password'])) {
                     $_SESSION['loginovan'] = true;
                     $_SESSION['korisnik'] = $korisnik;
-                    header('Location: pocetna.php');
+                    header('Location: ?stranica=pocetna');
                     exit;
                 } else {
                     $greske[] = 'Pogrešno korisničko ime ili šifra.';
