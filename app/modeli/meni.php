@@ -1,16 +1,15 @@
 <?php
+
+namespace Model;
+
 class MeniModel {
 
-    private $pdo;
+		use PocetniModel;
 
-    public function __construct($pdo) {
-        $this->pdo = $pdo;
-    }
+		protected $tabela = 'menu';
 
     public function dohvatiJela() {
-        $stmt = $this->pdo->prepare('SELECT * FROM menu');
-        $stmt->execute();
-        return $stmt->fetchAll();
+			return $this->nadjiSve();
     }
 }
 ?>

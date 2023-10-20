@@ -18,7 +18,7 @@
                     <a class="nav-link <?= $stranica === 'pocetna' ? 'active' : '' ?>" href="/">Pocetna</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= $stranica === 'meni' ? 'active' : '' ?>" href="?stranica=meni">Meni</a>
+                    <a class="nav-link <?= $stranica === 'meni' ? 'active' : '' ?>" href="/meni">Meni</a>
                 </li>
 								<li class="nav-item">
 									<a class="nav-link <?= $stranica === 'onama' ? 'active' : '' ?>" href="/onama">O nama</a>

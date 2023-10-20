@@ -4,9 +4,11 @@ namespace Kontrolor;
 
 Trait GlavniKontrolor
 {
-	public function view($name)
+	public function view($name, $data = [])
 	{
-
+		
+    extract($data);
+		
 		$loginovan = isset($_SESSION['loginovan']) && $_SESSION['loginovan'] == true;
 		$korisnik = $_SESSION['korisnik'] ?? NULL;
 

@@ -15,12 +15,12 @@ Trait Baza
 
 		$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 		$options = [
-				PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-				PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-				PDO::ATTR_EMULATE_PREPARES   => false,
+				\PDO::ATTR_ERRMODE            => \PDO::ERRMODE_EXCEPTION,
+				\PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
+				\PDO::ATTR_EMULATE_PREPARES   => false,
 		];
 
-		$con = new PDO($dsn, $user, $pass, $options);
+		$con = new \PDO($dsn, $user, $pass, $options);
 		return $con;
 	}
 
@@ -33,7 +33,7 @@ Trait Baza
 		$check = $stm->execute($data);
 		if($check)
 		{
-			$rezultat = $stm->fetchAll(PDO::FETCH_OBJ);
+			$rezultat = $stm->fetchAll(\PDO::FETCH_OBJ);
 			if(is_array($rezultat) && count($rezultat))
 			{
 				return $rezultat;
@@ -52,7 +52,7 @@ Trait Baza
 		$check = $stm->execute($data);
 		if($check)
 		{
-			$rezultat = $stm->fetchAll(PDO::FETCH_OBJ);
+			$rezultat = $stm->fetchAll(\PDO::FETCH_OBJ);
 			if(is_array($rezultat) && count($rezultat))
 			{
 				return $rezultat[0];

@@ -1,18 +1,21 @@
 <?php
-class MeniKontroler {
 
-    private $pdo;
-    private $model;
+namespace Kontrolor;
 
-    public function __construct($pdo) {
-        require 'modeli/meni.php';
-        $this->pdo = $pdo;
-        $this->model = new MeniModel($pdo);
-    }
+class MeniKontrolor {
+
+		use GlavniKontrolor;
+
+		private $meni;
+
+	function __construct() {
+			$this->meni = new \Model\MeniModel();
+		}
 
     public function index() {
-        $jela = $this->model->dohvatiJela();
-        require 'views/meni.php';
+		  $jela = $this->meni->dohvatiJela();
+			$this->view("meni", ['jela' => $jela]);
     }
 }
 ?>
+
