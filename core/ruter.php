@@ -36,6 +36,11 @@ class Ruter {
 								require 'kontroleri/meniKontroler.php';
 								$kontroler = new MeniKontroler($this->pdo);
                 break;
+
+						default: 
+								require 'kontroleri/pocetniKontroler.php';
+								$kontroler = new PocetniKontroler($this->pdo);
+                break;
         }
 
         $kontroler->index();

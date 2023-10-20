@@ -8,7 +8,7 @@ class MeniModel {
     }
 
     public function dohvatiJela() {
-        $stmt = $this->pdo->prepare('SELECT * FROM menu_pr1');
+        $stmt = $this->pdo->prepare('SELECT * FROM menu');
         $stmt->execute();
         return $stmt->fetchAll();
     }
