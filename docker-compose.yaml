@@ -25,7 +25,8 @@ services:
     build:
       dockerfile: Dockerfile
     volumes:
-      - .:/app
+      - ./:/app
+      - ./apache-config.conf:/etc/apache2/sites-enabled/000-default.conf
     ports:
       - 3000:80
     restart: always

@@ -1,0 +1,13 @@
+ErrorDocument 404 /404
+ErrorDocument 500 /error
+
+RewriteEngine On
+RewriteBase /public/
+
+# Accept loading of actual files and directories
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Send everything else to the index page
+RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
+

@@ -15,13 +15,13 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0"> 
                 <li class="nav-item">
-                    <a class="nav-link <?= $stranica === 'pocetna' ? 'active' : '' ?>" href="?stranica=pocetna">Pocetna</a>
+                    <a class="nav-link <?= $stranica === 'pocetna' ? 'active' : '' ?>" href="/">Pocetna</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link <?= $stranica === 'meni' ? 'active' : '' ?>" href="?stranica=meni">Meni</a>
                 </li>
 								<li class="nav-item">
-									<a class="nav-link <?= $stranica === 'onama' ? 'active' : '' ?>" href="?stranica=onama">O nama</a>
+									<a class="nav-link <?= $stranica === 'onama' ? 'active' : '' ?>" href="/onama">O nama</a>
 								</li>
 
                 <?php if ($loginovan): ?> 
