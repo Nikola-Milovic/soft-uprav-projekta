@@ -7,7 +7,7 @@
                     Ulica Maršala Tita 58, <br>
                     11000 Beograd, Srbija <br>
                     Tel: +381 11 2345 678 <br>
-                    Email: info@ekofood.com
+                    Email: info@ekohrana.com
                 </p>
             </div>
 

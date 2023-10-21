@@ -30,7 +30,6 @@ class App
 			$this->kontrolor = ucfirst($URL[0]);
 			unset($URL[0]);
 		}else{
-
 			$imeFajla = "../app/kontrolori/_404.php";
 			require $imeFajla;
 			$this->kontrolor = "_404";
@@ -46,7 +45,7 @@ class App
 			{
 				$this->metoda = $URL[1];
 				unset($URL[1]);
-			}	
+			}
 		}
 
 		call_user_func_array([$kontrolor,$this->metoda], $URL);

@@ -62,6 +62,14 @@
                             <li><a id="odjava"class="dropdown-item">Odjava</a></li>
                         </ul>
                     </li>
+										<li class="nav-item position-relative">
+												<a class="nav-link" href="/korpa">
+														<i class="fas fa-shopping-cart"></i> 
+														<span id="cartItemCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+															<?php echo array_sum($_SESSION['korpa'] ?? []);?>
+														</span>
+												</a>
+										</li>
                 <?php else: ?>
                     <li class="nav-item">
                         <a class="nav-link" href="/prijava">Prijava</a>
