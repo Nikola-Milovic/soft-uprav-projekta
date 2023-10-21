@@ -5,7 +5,7 @@
 
 <div class="row">
     <?php foreach ($jela as $jelo): ?>
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 mb-4 animated fadeIn">
             <div class="card">
                 <div class="card-img-container">
                     <img src="<?= $jelo->img_url ?>" class="card-img-top" alt="<?= $jelo->name ?>">
