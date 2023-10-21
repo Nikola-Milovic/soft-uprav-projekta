@@ -62,10 +62,67 @@
     border-radius: 10px; 
 }
 
+.container {
+	max-width: 1200px;
+}
+
 .container p {
     text-align: justify; 
 }
 
 body {
   height: 100vh;
+	overflow-x: hidden;
+}
+
+.divider {
+	border-top: 1px solid #808080;
+	width: 50%;
+	margin: auto;
+}
+
+.cta-bg {
+	background: #007bff;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card {
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+	margin-bottom: 30px;
+}
+
+.hero-section {
+	min-height: 70vh;
+	overflow: hidden;
+}
+
+.hero-section img {
+	clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
+}
+
+.hero-section .lead,
+.hero-section h1 {
+	z-index: 1;
+}
+
+#scrollTopBtn {
+	background-color: #007bff; 
+	border: none;
+	border-radius: 20%;
+	padding: 10px;
+	color: white; 
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	display: none; 
+	font-size: 18px;
+	z-index: 1000; 
+}
+
+#scrollTopBtn:hover {
+	background-color: #0056b3; 
+}
+
+#scrollTopBtn i {
+	margin-right: 5px; 
 }
