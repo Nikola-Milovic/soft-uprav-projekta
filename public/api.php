@@ -7,3 +7,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 	exit;
 }
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'submitrecept') {
+    $ime = $_POST['ime'];
+    $opis = $_POST['opis'];
+    $slika = $_FILES['slika'];
+    
+		// Negde sacuvamo recept
+    
+    echo json_encode(['success' => true]);
+    exit;
+}

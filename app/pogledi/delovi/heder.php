@@ -51,6 +51,9 @@
 								<li class="nav-item">
 									<a class="nav-link <?= $stranica === 'onama' ? 'active' : '' ?>" href="/onama">O nama</a>
 								</li>
+								<li class="nav-item">
+									<a class="nav-link <?= $stranica === 'predlozi' ? 'active' : '' ?>" href="/predlozi">Vasi Recepti</a>
+								</li>
 
                 <?php if ($korisnik): ?> 
                     <li class="nav-item dropdown">
