@@ -9,9 +9,6 @@ Trait GlavniKontrolor
 		
     extract($data);
 		
-		$loginovan = isset($_SESSION['loginovan']) && $_SESSION['loginovan'] == true;
-		$korisnik = $_SESSION['korisnik'] ?? NULL;
-
 		$imeFajla = "../app/pogledi/".$name.".pogled.php";
 		if(file_exists($imeFajla))
 		{

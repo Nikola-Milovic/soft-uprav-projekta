@@ -1,21 +1,22 @@
 <?php
-class RegistracijaKontroler {
 
-    private $pdo;
+namespace Kontrolor;
 
-    public function __construct($pdo) {
-        $this->pdo = $pdo;
-    }
+class RegistracijaKontrolor {
+
+		use GlavniKontrolor;
 
     public function index() {
-        session_start();
 
         $greske = [];
+				$korisnikModel = new \Model\KorisnikModel();
 
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
+        		$greske = [];
             $korisnickoIme = $_POST['korisnickoIme'];
             $ime = $_POST['ime'];
             $sifra = $_POST['sifra'];
+            $ponovljenaSifra = $_POST['potvrda_sifra'];
 
             if(empty($korisnickoIme)) {
                 $greske[] = 'Korisničko ime je obavezno.';
@@ -29,23 +30,23 @@ class RegistracijaKontroler {
                 $greske[] = 'Šifra je obavezna.';
             }
 
+						if($sifra != $ponovljenaSifra) {
+							$greske[] = 'Sifre se ne podudaraju.';
+						}
+
             if(empty($greske)) {
-                $hashovanaSifra = password_hash($sifra, PASSWORD_DEFAULT);
-
-                $stmt = $this->pdo->prepare('INSERT INTO users_pr1 (username, name, password) VALUES (?, ?, ?)');
-                $stmt->execute([$korisnickoIme, $ime, $hashovanaSifra]);
-
-                $stmt = $this->pdo->prepare('SELECT * FROM users_pr1 WHERE username = ?');
-                $stmt->execute([$korisnickoIme]);
-                $korisnik = $stmt->fetch();
-								$_SESSION['loginovan'] = true;
+							try {
+								$korisnik = $korisnikModel->kreirajKorisnika($korisnickoIme, $ime, $sifra);
 								$_SESSION['korisnik'] = $korisnik;
-								header('Location: ?stranica=pocetna');
+								header('Location: /');
 								exit;
+							} catch (\PDOException $e) {
+								$greske[] = 'Serverska greska: ' . $e->getMessage();
+							}
             }
         }
 
-        require 'views/registracija.php';
+				$this->view("registracija", ['greske' => $greske]);
     }
 }
 ?>

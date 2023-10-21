@@ -27,9 +27,13 @@
                     <label for="sifra" class="form-label">Šifra</label>
                     <input type="password" class="form-control" id="sifra" name="sifra" required>
                 </div>
+                <div class="mb-3">
+                    <label for="potvrda_sifra" class="form-label">Ponovite šifru</label>
+                    <input type="password" class="form-control" id="potvrda_sifra" name="potvrda_sifra" required>
+                </div>
                 <button type="submit" class="btn btn-primary mb-3">Registruj se</button>
             </form>
-						<a href="?stranica=prijava">Vec imas nalog? Prijavi se</a>
+						<a href="/prijava">Vec imas nalog? Prijavi se</a>
         </div>
     </div>
 </div>

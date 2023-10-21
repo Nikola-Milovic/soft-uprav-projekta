@@ -25,7 +25,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary mb-3">Prijavi se</button>
             </form>
-						<a href="?stranica=registracija">Nemate nalog? Registruj se</a>
+						<a href="/registracija">Nemate nalog? Registruj se</a>
         </div>
     </div>
 </div>

@@ -1,14 +1,15 @@
 <?php
-class PrijavaKontroler {
 
-    private $pdo;
+namespace Kontrolor;
 
-    public function __construct($pdo) {
-        $this->pdo = $pdo;
-    }
+class PrijavaKontrolor {
+
+		use GlavniKontrolor;
 
     public function index() {
         $greske = [];
+
+				$korisnikModel = new \Model\KorisnikModel();
 
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
 						$greske = [];
@@ -25,16 +26,11 @@ class PrijavaKontroler {
             }
 
             if(empty($greske)) {
-								// Provera baze
 							try {
-                $stmt = $this->pdo->prepare('SELECT * FROM users_pr1 WHERE username = ?');
-                $stmt->execute([$korisnickoIme]);
-                $korisnik = $stmt->fetch();
-
-                if($korisnik && password_verify($sifra, $korisnik['password'])) {
-                    $_SESSION['loginovan'] = true;
+								$korisnik = $korisnikModel->proveraKorisnika($korisnickoIme, $sifra);
+                if($korisnik) {
                     $_SESSION['korisnik'] = $korisnik;
-                    header('Location: ?stranica=pocetna');
+                    header('Location: /');
                     exit;
                 } else {
                     $greske[] = 'Pogrešno korisničko ime ili šifra.';
@@ -45,7 +41,7 @@ class PrijavaKontroler {
             }
         }
 
-        require 'views/prijava.php';
+			$this->view("prijava", ['greske' => $greske]);
     }
 }
 ?>
