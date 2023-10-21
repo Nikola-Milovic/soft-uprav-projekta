@@ -1,4 +1,32 @@
 <?php include 'head.php'; ?>
+<?php 
+		$korisnik = $_SESSION['korisnik'] ?? NULL;
+?>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#odjava").click(function(e) {
+            e.preventDefault();
+
+            $.ajax({
+                url: 'api.php',
+                type: 'POST',
+                data: {action: 'odjava'},
+                success: function(response) {
+										var parsedResponse = JSON.parse(response);  
+                    if(parsedResponse.success) {
+                        window.location.href = '/prijava';
+                    } else {
+                        alert('Odjava neuspešna. Molimo pokušajte ponovo.');
+                    }
+                },
+                error: function() {
+                    alert('Došlo je do greške prilikom odjave.');
+                }
+            });
+        });
+    });
+</script>
 
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -24,19 +52,19 @@
 									<a class="nav-link <?= $stranica === 'onama' ? 'active' : '' ?>" href="/onama">O nama</a>
 								</li>
 
-                <?php if ($loginovan): ?> 
+                <?php if ($korisnik): ?> 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-														<?php echo $korisnik["name"]; ?>
+														<?php echo $korisnik->name; ?>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="?stranica=profil">Prikaz Profila</a></li>
-                            <li><a class="dropdown-item" href="skripte/odjava.php">Odjava</a></li>
+                            <li><a class="dropdown-item" href="/profil">Prikaz Profila</a></li>
+                            <li><a id="odjava"class="dropdown-item">Odjava</a></li>
                         </ul>
                     </li>
                 <?php else: ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="?stranica=prijava">Prijava</a>
+                        <a class="nav-link" href="/prijava">Prijava</a>
                     </li>
                 <?php endif; ?>
             </ul>
