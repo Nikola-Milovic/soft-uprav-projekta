@@ -13,8 +13,8 @@ spl_autoload_register(function($classname){
 	}
 });
 
-require 'funkcije.php';
 require 'baza.php';
 require 'model.php';
+require 'funkcije.php';
 require 'kontrolor.php';
 require 'app.php';

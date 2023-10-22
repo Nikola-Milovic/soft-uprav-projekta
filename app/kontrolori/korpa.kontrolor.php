@@ -7,7 +7,8 @@ class KorpaKontrolor {
 		use GlavniKontrolor;
 
     public function index() {
-			$this->view("korpa");
+			$korpa = $_SESSION['korpa'];
+			$this->view("korpa", ['korpa'=>$korpa]);
     }
 }
 ?>

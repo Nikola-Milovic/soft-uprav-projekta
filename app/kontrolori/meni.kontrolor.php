@@ -14,7 +14,9 @@ class MeniKontrolor {
 
     public function index() {
 		  $jela = $this->meni->dohvatiJela();
-			$this->view("meni", ['jela' => $jela]);
+			$korpa = $_SESSION['korpa'] ?? NULL;
+			$korisnik = $_SESSION['korisnik'] ?? NULL;
+			$this->view("meni", ['jela' => $jela, 'korpa' => $korpa, 'korisnik' => $korisnik]);
     }
 }
 ?>
