@@ -10,6 +10,10 @@ services:
       MYSQL_DATABASE: projekat
       MYSQL_USER: projekat
       MYSQL_PASSWORD: projekat
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --skip-character-set-client-handshake
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:

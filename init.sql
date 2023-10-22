@@ -1,11 +1,9 @@
--- ALTER USER 'projekat'@'%' IDENTIFIED WITH 'mysql_native_password' BY 'projekat';
-
 CREATE TABLE `users` (
   `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `username` varchar(80) NOT NULL,
   `name` varchar(80) NOT NULL,
   `password` varchar(80) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `menu` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -15,6 +13,17 @@ CREATE TABLE `menu` (
   `price` decimal(10,2) NOT NULL,
   `img_url` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `orders` (
+	`id` VARCHAR(100) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `items_ids` text NOT NULL,
+  `items_names` text NOT NULL,
+  `total` decimal(10,2) NOT NULL,
+  `ordered_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (user_id) REFERENCES users(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `menu` (name, description, alergens, price, img_url) VALUES 
@@ -27,14 +36,3 @@ INSERT INTO `menu` (name, description, alergens, price, img_url) VALUES
 ('Hrskavi Doručak', 'Bogati doručak sa raznim namirnicama.', NULL, 450.00, 'https://images.unsplash.com/photo-1484723091739-30a097e8f929'),
 ('Zdrav Ručak', 'Obrok sa svežim povrćem i jajima.', 'Jaja', 320.00, 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe'),
 ('Pileći Mediteran', 'Piletina pripremljena sa mediteranskim začinima.', 'Luk', 400.00, 'https://images.unsplash.com/photo-1467003909585-2f8a72700288');
-
-CREATE TABLE `orders` (
-	`id` VARCHAR(100) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `items_ids` text NOT NULL,
-  `items_names` text NOT NULL,
-  `total` decimal(10,2) NOT NULL,
-  `ordered_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (user_id) REFERENCES users(id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
