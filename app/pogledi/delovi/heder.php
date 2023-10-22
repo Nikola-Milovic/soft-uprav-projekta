@@ -4,31 +4,6 @@
 		$korpa = $_SESSION['korpa'] ?? NULL;
 ?>
 
-<script type="text/javascript">
-    $(document).ready(function() {
-        $("#odjava").click(function(e) {
-            e.preventDefault();
-
-            $.ajax({
-                url: 'api.php',
-                type: 'POST',
-                data: {action: 'odjava'},
-                success: function(response) {
-										var parsedResponse = JSON.parse(response);  
-                    if(parsedResponse.success) {
-                        window.location.href = '/prijava';
-                    } else {
-                        alert('Odjava neuspešna. Molimo pokušajte ponovo.');
-                    }
-                },
-                error: function() {
-                    alert('Došlo je do greške prilikom odjave.');
-                }
-            });
-        });
-    });
-</script>
-
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
@@ -84,3 +59,29 @@
     </div>
 </nav>
 
+
+<script type="text/javascript">
+$(document).ready(function() {
+		$("#odjava").click(function(e) {
+				e.preventDefault();
+
+				$.ajax({
+						url: 'api.php',
+						type: 'POST',
+						data: {action: 'odjava'},
+						success: function(response) {
+				console.log(response);
+								var parsedResponse = JSON.parse(response);  
+								if(parsedResponse.success) {
+										window.location.href = '/prijava';
+								} else {
+										alert('Odjava neuspešna. Molimo pokušajte ponovo.');
+								}
+						},
+						error: function() {
+								alert('Došlo je do greške prilikom odjave.');
+						}
+				});
+		});
+});
+</script>

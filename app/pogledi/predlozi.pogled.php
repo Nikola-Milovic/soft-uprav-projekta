@@ -16,7 +16,7 @@
             <label for="slika" class="form-label">Slika Jela</label>
             <input type="file" accept='image/*' class="form-control" id="slika" name="slika" required>
         </div>
-        <button type="submit" class="btn btn-primary">Pošalji</button>
+        <button type="submit" class="btn btn-primary mb-3">Pošalji</button>
     </form>
 </div>
 
