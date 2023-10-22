@@ -74,7 +74,6 @@ $('.dodajUKorpu').click(function(e) {
 			console.log(response);
 					response = JSON.parse(response);
 					if (response.success) {
-							// alert('Uklonjeno iz korpe!');
 							location.reload(); 
 					}
 			}

@@ -1,6 +1,7 @@
 <?php include 'head.php'; ?>
 <?php 
 		$korisnik = $_SESSION['korisnik'] ?? NULL;
+		$korpa = $_SESSION['korpa'] ?? NULL;
 ?>
 
 <script type="text/javascript">
@@ -69,7 +70,7 @@
 												<a class="nav-link" href="/korpa">
 														<i class="fas fa-shopping-cart"></i> 
 														<span id="cartItemCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-															<?php echo array_sum($_SESSION['korpa'] ?? []);?>
+															<?php echo count($korpa ?? []);?>
 														</span>
 												</a>
 										</li>

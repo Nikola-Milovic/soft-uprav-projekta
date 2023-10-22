@@ -3,6 +3,7 @@
 require_once '../app/core/baza.php';
 require_once '../app/core/model.php';
 require_once '../app/modeli/meni.php';
+require_once '../app/modeli/narudzbina.php';
 require_once '../app/core/funkcije.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'odjava') {
@@ -33,5 +34,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 	$id = $_POST['jeloId'];
 	ukloniIzKorpe($id);
 	echo json_encode(['success' => true]);
+	exit;
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'poruci') {
+	$korpa = $_SESSION['korpa'] ?? NULL;
+	$korisnik = $_SESSION['korisnik'] ?? NULL;
+	$narudzbina = new \Model\NarudzbinaModel();
+	$id = poruci($korpa, $korisnik, $narudzbina);
+	echo json_encode(['success' => true, 'id' => $id]);
 	exit;
 }

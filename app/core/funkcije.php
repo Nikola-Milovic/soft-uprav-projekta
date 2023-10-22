@@ -17,3 +17,9 @@ function ukloniIzKorpe($id){
 	unset($_SESSION['korpa'][$id]);
 	session_write_close();
 }
+
+function poruci($korpa, $korisnik, $narudzbina) {
+	$id = $narudzbina->poruci($korpa, $korisnik, $narudzbina);
+	unset($_SESSION['korpa']);
+	return $id;
+}
