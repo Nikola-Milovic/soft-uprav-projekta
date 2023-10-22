@@ -44,6 +44,7 @@ $('.ukloniIzKorpe').click(function(e) {
 				jeloId: jeloId,
 		},
 		success: function(response) {
+		response = JSON.parse(response);
 		if (response.success) {
 			location.reload(); 
 		}
