@@ -1,5 +1,11 @@
 <?php 
 
+if (getenv('USE_DOCKER')) {
+	DEFINE("POCETNIDIREKTORIJUM", "/app");
+} else {
+	DEFINE("POCETNIDIREKTORIJUM", "http://usp2022.epizy.com/nikola-milovic");
+}
+
 require_once POCETNIDIREKTORIJUM.'/app/core/baza.php';
 require_once POCETNIDIREKTORIJUM.'/app/core/model.php';
 require_once POCETNIDIREKTORIJUM.'/app/modeli/meni.php';
@@ -45,3 +51,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 	echo json_encode(['success' => true, 'id' => $id]);
 	exit;
 }
+
+?>

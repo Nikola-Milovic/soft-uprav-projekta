@@ -13,8 +13,8 @@ spl_autoload_register(function($classname){
 	}
 });
 
-require POCETNIDIREKTORIJUM.'/app/baza.php';
-require POCETNIDIREKTORIJUM.'/app/model.php';
-require POCETNIDIREKTORIJUM.'/app/funkcije.php';
-require POCETNIDIREKTORIJUM.'/app/kontrolor.php';
-require POCETNIDIREKTORIJUM.'/app/app.php';
+require POCETNIDIREKTORIJUM.'/app/core/baza.php';
+require POCETNIDIREKTORIJUM.'/app/core/model.php';
+require POCETNIDIREKTORIJUM.'/app/core/funkcije.php';
+require POCETNIDIREKTORIJUM.'/app/core/kontrolor.php';
+require POCETNIDIREKTORIJUM.'/app/core/app.php';
