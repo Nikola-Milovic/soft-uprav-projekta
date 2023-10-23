@@ -38,7 +38,7 @@ class RegistracijaKontrolor {
 							try {
 								$korisnik = $korisnikModel->kreirajKorisnika($korisnickoIme, $ime, $sifra);
 								$_SESSION['korisnik'] = $korisnik;
-								header('Location: /');
+								header('Location: ?stranica=pocetna');
 								exit;
 							} catch (\PDOException $e) {
 								$greske[] = 'Serverska greska: ' . $e->getMessage();

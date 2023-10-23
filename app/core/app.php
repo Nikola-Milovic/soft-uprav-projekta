@@ -20,14 +20,14 @@ class App
 		}
 
 		/** Izaberi kontrolor **/
-		$imeFajla = POCETNIDIREKTORIJUM."/app/kontrolori/".$URL[0].".kontrolor.php";
+		$imeFajla = BASE_DIR."/app/kontrolori/".$URL[0].".kontrolor.php";
 		if(file_exists($imeFajla))
 		{
 			require $imeFajla;
 			$this->kontrolor = ucfirst($URL[0]);
 			unset($URL[0]);
 		}else{
-			$imeFajla = POCETNIDIREKTORIJUM."/app/kontrolori/_404.php";
+			$imeFajla = BASE_DIR."/app/kontrolori/_404.php";
 			require $imeFajla;
 			$this->kontrolor = "_404";
 		}

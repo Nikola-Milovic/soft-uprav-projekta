@@ -30,7 +30,7 @@ class PrijavaKontrolor {
 								$korisnik = $korisnikModel->proveraKorisnika($korisnickoIme, $sifra);
                 if($korisnik) {
                     $_SESSION['korisnik'] = $korisnik;
-                    header('Location: /');
+										header('Location: ?stranica=pocetna');
                     exit;
                 } else {
                     $greske[] = 'Pogrešno korisničko ime ili šifra.';
