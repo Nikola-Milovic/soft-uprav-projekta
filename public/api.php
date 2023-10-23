@@ -3,7 +3,7 @@
 if (getenv('USE_DOCKER')) {
 	DEFINE("POCETNIDIREKTORIJUM", "/app");
 } else {
-	DEFINE("POCETNIDIREKTORIJUM", "http://usp2022.epizy.com/nikola-milovic");
+	DEFINE("POCETNIDIREKTORIJUM", "/home/vol5_8/epizy.com/epiz_31121671/htdocs/nikola-milovic");
 }
 
 require_once POCETNIDIREKTORIJUM.'/app/core/baza.php';
