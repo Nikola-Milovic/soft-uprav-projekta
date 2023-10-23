@@ -3,7 +3,7 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <img src="/assets/slike/ikonica-96.png" class="mx-auto d-block" alt="Logo">
+            <img src="assets/slike/ikonica-96.png" class="mx-auto d-block" alt="Logo">
             <h2 class="text-center mb-4">Registracija</h2>
 
             <?php if(!empty($greske)): ?>
@@ -33,7 +33,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary mb-3">Registruj se</button>
             </form>
-						<a href="/prijava">Vec imas nalog? Prijavi se</a>
+						<a href="?stranica=prijava">Vec imas nalog? Prijavi se</a>
         </div>
     </div>
 </div>

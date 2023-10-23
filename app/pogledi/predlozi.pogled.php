@@ -21,23 +21,23 @@
 </div>
 
 <script>
-    $('#receptForm').submit(function(e) {
-        e.preventDefault();
-        var formData = new FormData(this);
-        formData.append('action', 'submitrecept');
-        $.ajax({
-            url: 'api.php',
-            type: 'POST',
-            data: formData,
-            success: function(response) {
-							alert('Vaš predlog je poslat!');
-							$('#receptForm')[0].reset();
-            },
-            cache: false,
-            contentType: false,
-            processData: false
-        });
-    });
+	$('#receptForm').submit(function(e) {
+		e.preventDefault();
+		var formData = new FormData(this);
+		formData.append('action', 'submitrecept');
+		$.ajax({
+				url: 'api.php',
+				type: 'POST',
+				data: formData,
+				success: function(response) {
+					alert('Vaš predlog je poslat!');
+					$('#receptForm')[0].reset();
+				},
+				cache: false,
+				contentType: false,
+				processData: false
+		});
+	});
 </script>
 
 <?php include 'delovi/futer.php'; ?>

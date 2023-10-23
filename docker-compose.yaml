@@ -30,7 +30,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./:/app
-      - ./apache-config.conf:/etc/apache2/sites-enabled/000-default.conf
+      # - ./apache-config.conf:/etc/apache2/sites-enabled/000-default.conf
     environment:
       USE_DOCKER: true
     ports:

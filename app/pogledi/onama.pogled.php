@@ -3,7 +3,7 @@
 <div class="container mt-5 animated fadeIn">
     <h1 class="mb-4">O Nama</h1>
 
-    <img src="/assets/slike/ekoloska-dostava.jpg" class="img-fluid mb-4 animated fadeInRight" alt="Eco-Friendly Delivery">
+    <img src="assets/slike/ekoloska-dostava.jpg" class="img-fluid mb-4 animated fadeInRight" alt="Eco-Friendly Delivery">
 
     <h3>Inovativni Model Dostave</h3>
     <p>

@@ -63,7 +63,7 @@ $('#poruci').click(function(e) {
 		success: function(response) {
 		response = JSON.parse(response);
 		if (response.success) {
-			window.location = '/potvrda?order_id='+response.id;
+			window.location = '?stranica=potvrda&&order_id='+response.id;
 		}
 	}
 	});

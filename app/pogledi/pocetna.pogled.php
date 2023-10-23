@@ -8,7 +8,7 @@ include 'delovi/heder.php';
         <div class="col-lg-6 py-5 px-lg-5 text-center text-lg-start">
             <h1 class="display-4">Dostava Eko Hrane</h1>
             <p class="lead">Dostavljamo vašu omiljenu hranu u ekološki prihvatljivim pakovanjima električnim vozilima.</p>
-            <a class="btn btn-primary btn-lg" href="/meni" role="button">Naruči Odmah</a> 
+            <a class="btn btn-primary btn-lg" href="?stranica=meni" role="button">Naruči Odmah</a> 
         </div>
         <div class="col-lg-6 p-0 animated fadeInRight">
             <img src="assets/slike/hero.jpg" alt="Eko Dostava Hrane" class="img-fluid">
@@ -81,7 +81,7 @@ include 'delovi/heder.php';
     <div class="cta-bg rounded p-5 text-white text-center">
         <h2 class="mb-4">Pravi Izbor za Vas i Planetu</h2>
         <p class="lead">Uživajte u ukusnoj, zdravoj i ekološki odgovornoj hrani. Neka svaka vaša porudžbina doprinese zelenijoj planeti.</p>
-        <a href="/meni" class="btn btn-light btn-lg">Naruči Sada</a>
+        <a href="?stranica=meni" class="btn btn-light btn-lg">Naruči Sada</a>
     </div>
 </div>
 </main>

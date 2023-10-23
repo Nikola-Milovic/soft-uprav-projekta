@@ -7,10 +7,8 @@ class App
 
 	private function podeliURL()
 	{
-		$URL = $_SERVER['REQUEST_URI'] ?? '/pocetna';
-		$URL = strstr($URL, '?', true) ?: $URL;
-		$URL = explode("/", trim($URL,"/"));
-		return $URL;	
+		$stranica = $_GET['stranica'] ?? 'pocetna';
+		return [$stranica];
 	}
 
 	public function ucitajKontrolor()

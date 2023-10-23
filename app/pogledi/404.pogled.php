@@ -7,7 +7,7 @@
                 <p class="lead">
 											Izgleda da je stranica koju tražite ne postoji.
                   </p>
-                <a href="/pocetna" class="btn btn-primary">Nazad na pocetnu</a>
+                <a href="?stranica=pocetna" class="btn btn-primary">Nazad na pocetnu</a>
             </div>
         </div>
     </body>

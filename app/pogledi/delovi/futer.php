@@ -27,10 +27,10 @@
             <div class="col-lg-4 mb-4">
                 <h5>Brze Poveznice</h5>
                 <ul class="list-unstyled">
-                    <li><a href="/">Početna</a></li>
-                    <li><a href="/meni">Meni</a></li>
-                    <li><a href="/onama">O nama</a></li>
-                    <li><a href="/prijava">Prijava</a></li>
+                    <li><a href="?stranica=">Početna</a></li>
+                    <li><a href="?stranica=meni">Meni</a></li>
+                    <li><a href="?stranica=onama">O nama</a></li>
+                    <li><a href="?stranica=prijava">Prijava</a></li>
                 </ul>
             </div>
         </div>
