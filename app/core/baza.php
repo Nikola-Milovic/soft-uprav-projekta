@@ -7,19 +7,25 @@ Trait Baza
 
 	private function povezi()
 	{
-		$host = 'db';
-		$db = 'projekat';
-		$user = 'projekat';
-		$pass = 'projekat';
 		$charset = 'utf8mb4';
-
-		$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 		$options = [
-				\PDO::ATTR_ERRMODE            => \PDO::ERRMODE_EXCEPTION,
-				\PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
-				\PDO::ATTR_EMULATE_PREPARES   => false,
+			\PDO::ATTR_ERRMODE            => \PDO::ERRMODE_EXCEPTION,
+			\PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
+			\PDO::ATTR_EMULATE_PREPARES   => false,
 		];
 
+		if (getenv('USE_DOCKER')) {
+			$host = 'db';
+			$db = 'projekat';
+			$user = 'projekat';
+			$pass = 'projekat';
+		} else {
+			$host = 'sql200.epizy.com';
+			$db = 'epiz_31121671_db1';
+			$user = 'epiz_31121671';
+			$pass = '7XhEahxb5zgcPgN';
+		}
+		$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 		$con = new \PDO($dsn, $user, $pass, $options);
 		return $con;
 	}
