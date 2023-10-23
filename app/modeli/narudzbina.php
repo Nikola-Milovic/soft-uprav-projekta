@@ -6,7 +6,7 @@ class NarudzbinaModel {
 
 	use PocetniModel;
 
-	protected $tabela = 'orders';
+	protected $tabela = 'orders_nm1';
 
 	public function poruci($korpa, $korisnik, $narudzbina) {
 		$itemIds = [];

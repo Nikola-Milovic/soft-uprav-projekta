@@ -6,7 +6,7 @@ class MeniModel {
 
 		use PocetniModel;
 
-		protected $tabela = 'menu';
+		protected $tabela = 'menu_nm1';
 
     public function dohvatiJela() {
 			return $this->nadjiSve();

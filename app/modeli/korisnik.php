@@ -6,7 +6,7 @@ class KorisnikModel {
 
     use PocetniModel;
 
-    protected $tabela = 'users';
+    protected $tabela = 'users_nm1';
 
     public function kreirajKorisnika($korisnickoIme, $ime, $sifra) {
         $hashovanaSifra = password_hash($sifra, PASSWORD_DEFAULT);
