@@ -1,10 +1,10 @@
 <?php 
 
-require_once '../app/core/baza.php';
-require_once '../app/core/model.php';
-require_once '../app/modeli/meni.php';
-require_once '../app/modeli/narudzbina.php';
-require_once '../app/core/funkcije.php';
+require_once POCETNIDIREKTORIJUM.'/app/core/baza.php';
+require_once POCETNIDIREKTORIJUM.'/app/core/model.php';
+require_once POCETNIDIREKTORIJUM.'/app/modeli/meni.php';
+require_once POCETNIDIREKTORIJUM.'/app/modeli/narudzbina.php';
+require_once POCETNIDIREKTORIJUM.'/app/core/funkcije.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'odjava') {
 	odjava();

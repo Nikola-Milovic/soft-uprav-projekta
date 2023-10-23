@@ -6,15 +6,15 @@ spl_autoload_register(function($classname){
 	$classname = explode("\\", $classname);
 	$classname = end($classname);
   $classname = strtolower(str_replace('Model', '', $classname));
-	$imeFajla = "../app/modeli/".$classname.".php";
+	$imeFajla = POCETNIDIREKTORIJUM."/app/modeli/".$classname.".php";
 	if(file_exists($imeFajla))
 	{
 			require $imeFajla;
 	}
 });
 
-require 'baza.php';
-require 'model.php';
-require 'funkcije.php';
-require 'kontrolor.php';
-require 'app.php';
+require POCETNIDIREKTORIJUM.'/app/baza.php';
+require POCETNIDIREKTORIJUM.'/app/model.php';
+require POCETNIDIREKTORIJUM.'/app/funkcije.php';
+require POCETNIDIREKTORIJUM.'/app/kontrolor.php';
+require POCETNIDIREKTORIJUM.'/app/app.php';

@@ -1,7 +1,5 @@
 <?php
 
-defined('POCETNIDIREKTORIJUM') OR exit('Zabranjen pristup');
-
 class App
 {
 	private $kontrolor = 'pocetna';
@@ -24,14 +22,14 @@ class App
 		}
 
 		/** Izaberi kontrolor **/
-		$imeFajla = "../app/kontrolori/".$URL[0].".kontrolor.php";
+		$imeFajla = POCETNIDIREKTORIJUM."/app/kontrolori/".$URL[0].".kontrolor.php";
 		if(file_exists($imeFajla))
 		{
 			require $imeFajla;
 			$this->kontrolor = ucfirst($URL[0]);
 			unset($URL[0]);
 		}else{
-			$imeFajla = "../app/kontrolori/_404.php";
+			$imeFajla = POCETNIDIREKTORIJUM."/app/kontrolori/_404.php";
 			require $imeFajla;
 			$this->kontrolor = "_404";
 		}

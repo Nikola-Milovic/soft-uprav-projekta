@@ -9,13 +9,13 @@ Trait GlavniKontrolor
 		
     extract($data);
 		
-		$imeFajla = "../app/pogledi/".$name.".pogled.php";
+		$imeFajla = POCETNIDIREKTORIJUM."/app/pogledi/".$name.".pogled.php";
 		if(file_exists($imeFajla))
 		{
 			require $imeFajla;
 		}else{
 
-			$imeFajla = "../app/pogledi/404.pogled.php";
+			$imeFajla = POCETNIDIREKTORIJUM."/app/pogledi/404.pogled.php";
 			require $imeFajla;
 		}
 	}
